@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Тройчук Руслан</title>
+    <link
+      rel="shortcut icon"
+      href="/public/frontend/img/favicon/logoblack.ico"
+      type="image/x-icon"/>
+    <link rel="stylesheet" href="/public/frontend/css/library.min.css" />
+    <link rel="stylesheet" href="/public/frontend/css/main.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.5.0/proj4-src.js"></script>
+    <script src="https://js.pusher.com/4.1/pusher.min.js"></script>
+    <meta
+      name="csrf-token"
+      content="NXtbxeOgYgdCbE6WqJkjqVehnpGhMNY7Et2qNDME"/>
+  </head>
+  <body>
+
+
+    <div class="height-helper">
+      <div class="content-wrap">
+        <header class="header">
+          <div class="container">
+            <div class="header__burger">
+              <span></span>
+              <span></span>
+            </div>
+            <a href="/" class="logo">
+              <img src="/public/frontend/img/svg/logo.svg" alt="" />
+            </a>
+            <nav class="header__nav">
+              <a href="/search.html">Оголошення</a>
+              <a href="/search-agent.html">Агенти</a>
+              <a href="/articles.html">Новини</a>
+              <a href="/yak-pratsyuvati-z-sistemoyu.html">
+                Як працювати з системою?</a>
+              <a
+                href=" # "
+                class="button-link js-popup-button"
+                data-popupShow="favorites-login">
+                Подати оголошення</a>
+            </nav>
+            <div class="header__personal">
+              <a href="/customer/login" class="header__login">
+                <div class="header__loginIcon">
+                  <img
+                    class="icon-default"
+                    src="/public/frontend/img/svg/Login.svg"
+                    alt=""/>
+                  <img
+                    class="icon-hover"
+                    src="/public/frontend/img/svg/Login-hover.svg"
+                    alt=""/>
+                </div>
+                <span>Увійти</span>
+              </a>
+            </div>
+          </div>
+        </header>
+
+        <section class="come-back dark-section">
+          <div class="container">
+            <div class="text">
+              <a href="/" class="text__link text__link--arrow">
+                <img
+                  class="hover-off"
+                  src="/public/frontend/img/svg/arrow-back.svg"
+                  alt=""/>
+                <img
+                  class="hover-on"
+                  src="/public/frontend/img/svg/arrow-back-y.svg"
+                  alt=""/>
+                <span>Повернутися на головну</span>
+              </a>
+            </div>
+          </div>
+        </section>
+        <section class="profile">
+          <div class="container">
+            <div class="profile__wrap">
+              <div class="profile__main">
+                <div class="ads">
+                  <div class="title title--sub flex-cont align-center">
+                    <p>Оголошення</p>
+                    <div class="signature signature--ml">
+                      <p>1 оголошення</p>
+                    </div>
+                  </div>
+                  <div class="ads__wrap">
+                    <div class="ads__cardContent active allotment">
+                      <a href="/advert/id=1.html" class="ads__card">
+                        <div class="ads__allotment">
+                          <p>top</p>
+                        </div>
+                        <div class="ads__type">
+                          <div
+                            class="text text--ttu text--blue text--bold text--mini-10">
+                            <p>Продаж</p>
+                          </div>
+                        </div>
+                        <div class="ads__cardWrap">
+                          <div class="ads__addressInfoWrap">
+                            <div class="ads__addressInfo">
+                              <div class="ads__section">
+                                <div class="text text--gray text--normal">
+                                  <p>Регіон</p>
+                                </div>
+                                <div class="text text--black">
+                                  <p>Київська область</p>
+                                </div>
+                              </div>
+                              <div class="ads__section">
+                                <div class="text text--gray text--normal">
+                                  <p>Район</p>
+                                </div>
+                                <div class="text text--black">
+                                  <p>Бородянський район</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="ads__priceInfo">
+                            <div class="ads__section">
+                              <div class="text text--gray text--normal">
+                                <p>Площа, Га</p>
+                              </div>
+                              <div class="text text--black">
+                                <p>0.15</p>
+                              </div>
+                            </div>
+                            <div class="ads__section">
+                              <div class="text text--gray text--normal">
+                                <p>Ціна за 1 Га</p>
+                              </div>
+                              <div class="text text--black">
+                                <p>
+                                  <span class="js-price-num">2000000</span> грн.
+                                </p>
+                              </div>
+                            </div>
+                            <div class="ads__section">
+                              <div class="text text--gray text--normal">
+                                <p>Ціна за все</p>
+                              </div>
+                              <div class="text text--black">
+                                <p>
+                                  <span class="js-price-num">300000</span> грн.
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="ads__otherInfo">
+                            <div
+                              class="ads__section ads__section--extra flex-cont">
+                              <div class="extra-card">
+                                <img
+                                  src="/public/frontend/img/svg/Auction.svg"
+                                  alt=""/>
+                                <div class="extra-card__inform">
+                                  <div class="text text--mini">
+                                    <p>Можливий торг</p>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="viewers viewers--ml">
+                                <div class="viewers__icon">
+                                  <img
+                                    src="/public/frontend/img/svg/eye.svg"
+                                    alt=""/>
+                                </div>
+                                <div class="viewers__value">
+                                  <div class="text text--gray text--normal">
+                                    <p>2599</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="ads__section">
+                              <div class="text text--gray text--normal">
+                                <p>Дата публікації</p>
+                              </div>
+                              <div class="text text--black">
+                                <p>22.04.2020</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="ads__clearSection"></div>
+                        </div>
+                      </a>
+                      <div class="ads__otherFunction">
+                        <div
+                          class="ads__section ads__section--star js-favorite"
+                          data-advert-id="4931">
+                          <i class="icon-star-outline">
+                            <img
+                              src="/public/frontend/img/svg/star-outline.svg"
+                              alt=""/>
+                          </i>
+                          <i class="icon-star">
+                            <img
+                              src="/public/frontend/img/svg/star.svg"
+                              alt=""/>
+                          </i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="personCard personCard--main js-adaptive-person">
+                <input hidden value="1060" class="customer_id" />
+                <div class="personCard__roleWrap">
+                  <div class="personCard__role">
+                    <div class="text text--min">
+                      <p>Власник</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="personCard__fullInfo">
+                  <div class="personCard__data">
+                    <a href="/customer/id=1.html" class="personCard__photo">
+                      <img src="/public/frontend/img/no-avatar.png" alt="" />
+                    </a>
+                    <div class="personCard__otherData"></div>
+                    <div class="personCard__grade">
+                      <div class="personCard__gradeCard">
+                        <div class="text text--big">
+                          <p>1</p>
+                        </div>
+                        <div class="text text--grayColor text--miniPlus">
+                          <p>оголошення</p>
+                        </div>
+                      </div>
+                      <div class="personCard__gradeCard">
+                        <div class="text text--big">
+                          <p>135</p>
+                        </div>
+                        <div class="text text--grayColor text--miniPlus">
+                          <p>діб з нами</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="personCard__informWrap">
+                    <a href="/customer/id=1.html" class="personCard__name">
+                      <p>Руслан Т.</p>
+                    </a>
+                    <ul class="personCard__info">
+                      <li>
+                        <div class="personCard__icon">
+                          <img
+                            src="/public/frontend/img/svg/location-red.svg"
+                            alt=""/>
+                        </div>
+                        <div class="text text--grayColor">
+                          <p>Київ</p>
+                        </div>
+                      </li>
+                    </ul>
+                    <ul class="personCard__info js-contacts">
+                      <li>
+                        <div class="personCard__icon">
+                          <img
+                            src="/public/frontend/img/svg/telephone.svg"
+                            alt=""/>
+                        </div>
+                        <a href="tel:+380674426601" class="text">
+                          <p>+380674426601</p>
+                        </a>
+                      </li>
+                      <li class="personCard__infoError">
+                        <div class="personCard__icon">
+                          <img src="/public/frontend/img/svg/mail.svg" alt="" />
+                        </div>
+                        <a href="mailto:troichukruslan@gmail.com" class="text">
+                          <p>troichukruslan@gmail.com</p>
+                        </a>
+                      </li>
+                      <li class="text js-show-contacts">
+                        <p class="text__link">Показати контакти</p>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__card footer__card--custom">
+          <a href="/" class="logo">
+            <img src="/public/frontend/img/svg/logo-w.svg" alt="" />
+          </a>
+          <div class="footer__copyright">
+            <p>Copyright 2020. Всі права захищені.</p>
+          </div>
+          <div class="footer__pay">
+            <img src="/public/frontend/img/Mastercard-logo.png" alt="" />
+            <img src="/public/frontend/img/Visa.png" alt="" />
+          </div>
+        </div>
+        <ul class="footer__nav">
+          <li><a href="/support.html">Допомога і Зворотній зв'язок</a></li>
+          <li><a href="/platni-poslugi.html">Платні послуги</a></li>
+          <li>
+            <a href="/yak-pratsyuvati-z-sistemoyu.html">
+              Як працювати з системою?</a>
+          </li>
+        </ul>
+        <ul class="footer__nav">
+          <li><a href="/search.html">Оголошення</a></li>
+          <li><a href="/articles.html">Новини</a></li>
+        </ul>
+        <ul class="footer__nav">
+          <li><a href="/umovi-vikoristannya.html">Умови використання</a></li>
+          <li>
+            <a href="/politika-konfidentsiynosti.html">
+              Політика конфіденційності</a>
+          </li>
+        </ul>
+        <div class="footer__card footer__card--right">
+          <div class="footer__social">
+            <p>Ми в соціальних мережах:</p>
+            <ul class="social-nav">
+              <li>
+                <a href="https://www.facebook.com/ULAND-101028784636794/">
+                  <img src="/public/frontend/img/svg/fb.svg" alt="" />
+                </a>
+              </li>
+            </ul>
+          </div>
+          <a href="mailto:info@uland.com.ua" class="footer__mail">
+            <img src="/public/frontend/img/svg/mail-g.svg" alt="" />
+            <p>info@uland.com.ua</p>
+          </a>
+          <div class="footer__development">
+            <p>
+              Розробка і підтримка від
+              <a
+                href="https://www.linkedin.com/in/vitaliy-nosov-5543a8173/"
+                target="_blank">
+                Vitaliy Nosov</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Popup -->
+
+    <div class="popup favorites-login">
+      <div class="popup__wrap">
+        <div class="popup__close js-close-popup">
+          <img src="/public/frontend/img/svg/close.svg" alt="" />
+        </div>
+        <div class="title title--center title--mini">
+          <p>Подади оголошення</p>
+        </div>
+        <div class="text text--mtMedium text--center">
+          <p>
+            Щоб подати оголошення, потрібно авторизуватись або зареєструватись
+          </p>
+        </div>
+        <div class="helper helper--mt helper--center">
+          <a href="/customer/login.html" class="btn btn--same">
+            авторизуватись</a>
+          <a href="/register-step-1.html" class="btn btn--same btn--ml-20">
+            зареєструватись</a>
+        </div>
+      </div>
+    </div>
+    <div class="popup favorites-login-second">
+      <div class="popup__wrap">
+        <div class="popup__close js-close-popup">
+          <img src="/public/frontend/img/svg/close.svg" alt="" />
+        </div>
+        <div class="title title--center title--mini">
+          <p>Ви не авторизовані</p>
+        </div>
+        <div class="text text--mtMedium text--center">
+          <p>
+            Щоб додати оголошення в обрані потрібно авторизуватись або
+            зареєструватись
+          </p>
+        </div>
+        <div class="helper helper--mt helper--center">
+          <a href="/customer/login.html" class="btn btn--same">
+            авторизуватись</a>
+          <a href="/register-step-1.html" class="btn btn--same btn--ml-20">
+            зареєструватись</a>
+        </div>
+      </div>
+    </div>
+    <div class="popup close-advert">
+      <div class="popup__wrap">
+        <div class="popup__close js-close-popup">
+          <img src="/public/frontend/img/svg/close.svg" alt="" />
+        </div>
+        <div class="title title--center title--mini">
+          <p>Відключення оголошення</p>
+        </div>
+        <div class="text text--mtMedium text--center close-advert__sum">
+          <span id="text-description">
+            Вкажіть вартість, по якій Ви здали в оренду землю:</span>
+          <input type="text" pattern="^[ 0-9]+$" id="soldPrice" />
+          <span>грн.</span>
+        </div>
+        <div class="helper helper--mt helper--center">
+          <a href="#" class="btn btn--custom btn--same" id="close-advert-btn">
+            Не сдана</a>
+          <a href="#" class="btn btn--same btn--ml-20" id="close-advert-btn-ok">
+            Земля сдана</a>
+        </div>
+      </div>
+    </div>
+    <div class="popup close-advert-end">
+      <div class="popup__wrap popup__wrap--min">
+        <div class="title title--center title--mini">
+          <p>Оголошення успішно відключено і відкріплено від Вашого профілю!</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="loader">
+      <div class="loader__item"></div>
+    </div>
+
+    <a href="/customer/login.html" class="advert-action btn">
+      <p>Подати оголошення</p>
+      <img src="/public/frontend/img/svg/plus-black.svg" alt="" />
+    </a>
+    <script src="/public/frontend/js/app.js"></script>
+    <script
+      type="text/javascript"
+      src="/public/frontend/js/library.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+    <script
+      type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBT9V7PtXQCVT5wFlkamJueRXOLgYSnNQk&language=uk"></script>
+    <script
+      type="text/javascript"
+      src="/public/frontend/js/main.min.js"></script>
+
+  </body>
+</html>

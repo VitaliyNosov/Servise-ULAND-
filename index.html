@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Сервіс Uland - земельна дошка оголошень з продажу, оренди, купівлі
+      земельних ділянок в Україні
+    </title>
+    <meta
+      name="description"
+      content="Сервіс Uland - це 5071 оголошень з продажу, оренди та купівлі земельних ділянок в Україні. 
+      Обирай ділянку за допомою зручного фільтру!"/>
+    <meta name="keywords" content="" />
+    <link
+      rel="shortcut icon"
+      href="public/frontend/img/favicon/logoblack.ico"
+      type="image/x-icon"/>
+    <link rel="stylesheet" href="public/frontend/css/library.min.css" />
+    <link rel="stylesheet" href="public/frontend/css/main.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.5.0/proj4-src.js"></script>
+    <script src="https://js.pusher.com/4.1/pusher.min.js"></script>
+    <meta
+      name="csrf-token"
+      content="P73cStvYlZM3p8uUiqxuLMo0CTl4rZWJi1VVRfOa"/>
+  </head>
+  <body>
+    <div class="height-helper">
+      <div class="content-wrap">
+        <header class="header">
+          <div class="container">
+            <div class="header__burger">
+              <span></span>
+              <span></span>
+            </div>
+            <a href="/" class="logo">
+              <img src="public/frontend/img/svg/logo.svg" alt="" />
+            </a>
+            <nav class="header__nav">
+              <a href="search.html">Оголошення</a>
+              <a href="search-agent.html">Агенти</a>
+              <a href="articles.html">Новини</a>
+              <a href="yak-pratsyuvati-z-sistemoyu.html">
+                Як працювати з системою?</a>
+              <a
+                href=" # "
+                class="button-link js-popup-button"
+                data-popupShow="favorites-login">
+                Подати оголошення</a>
+            </nav>
+            <div class="header__personal">
+              <a href="customer/login.html" class="header__login">
+                <div class="header__loginIcon">
+                  <img
+                    class="icon-default"
+                    src="public/frontend/img/svg/Login.svg"
+                    alt=""/>
+                  <img
+                    class="icon-hover"
+                    src="public/frontend/img/svg/Login-hover.svg"
+                    alt=""/>
+                </div>
+                <span>Увійти</span>
+              </a>
+            </div>
+          </div>
+        </header>
+
+        <section class="callboard get-api-region">
+          <div class="container">
+            <div class="callboard__main">
+              <div class="callboard__search">
+                <div class="text text--ttu text--bold text--miniPlus">
+                  <p>ДОШКА ОГОЛОШЕНЬ</p>
+                </div>
+                <div class="title">
+                  <h1>Купівля, продаж і оренда землі</h1>
+                </div>
+                <div class="callboard__description">
+                  <p>
+                    За допомогою сервісу uland.com.ua, ви можете купити або
+                    продати, зняти або здати в оренду будь-які земельні ділянки.
+                    Особлива система пошуку по кадастровим номерам, допоможе вам
+                    швидко знайти, чи подати оголошення.
+                  </p>
+                </div>
+                <form
+                  method="POST"
+                  class="callboard__form"
+                  action="https://uland.com.ua/search-home">
+                  <input
+                    type="hidden"
+                    name="_token"
+                    value="P73cStvYlZM3p8uUiqxuLMo0CTl4rZWJi1VVRfOa"/>
+                  <div class="callboard__select">
+                    <label class="radio checked">
+                      <input
+                        type="radio"
+                        value="Оренда"
+                        name="type"
+                        id="rent"
+                        checked=""/>
+                      <div class="radio__text">Оренда</div>
+                    </label>
+                    <label class="radio">
+                      <input
+                        type="radio"
+                        value="Продаж"
+                        name="type"
+                        id="sale"/>
+                      <div class="radio__text">Продаж</div>
+                    </label>
+                  </div>
+                  <div class="callboard__data">
+                    <div class="callboard__input">
+                      <div class="callboard__region">
+                        <img src="public/frontend/img/svg/search.svg" alt="" />
+                        <div class="input-group__clear">
+                          <img src="public/frontend/img/svg/close.svg" alt="" />
+                        </div>
+                        <input
+                          type="text"
+                          placeholder="Введіть область або кадастровий номер"
+                          class="searchRegion"
+                          id="searchRegion"
+                          name="row"
+                          autocomplete="new-password"/>
+                        <input
+                          type="text"
+                          class="search_type"
+                          name="s_city"
+                          value=""
+                          hidden/>
+                        <input
+                          type="text"
+                          class="search_type"
+                          name="s_district"
+                          value=""
+                          hidden/>
+                        <input
+                          type="text"
+                          class="search_type"
+                          name="s_region"
+                          value=""
+                          hidden/>
+                        <ul class="drop-search-region"></ul>
+                      </div>
+                    </div>
+                    <button type="submit" class="btn btn--def">
+                      <span>ШУКАТИ</span>
+                    </button>
+                  </div>
+                </form>
+              </div>
+              <div class="callboard__photo">
+                <img src="public/frontend/img/illust.jpeg" alt="" />
+              </div>
+            </div>
+            <div class="fresh-info fresh-info--mt">
+              <div class="fresh-info__card">
+                <div class="fresh-info__value">
+                  <p>1352</p>
+                </div>
+                <div class="signature signature--mt">
+                  <p>користувачів</p>
+                </div>
+              </div>
+              <div class="fresh-info__card">
+                <div class="fresh-info__value">
+                  <p>5071</p>
+                </div>
+                <div class="signature signature--mt">
+                  <p>всього оголошень</p>
+                </div>
+              </div>
+              <div class="fresh-info__card">
+                <div class="fresh-info__value">
+                  <p>+ 0</p>
+                </div>
+                <div class="signature signature--mt">
+                  <p>додано сьогодні</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="top-adverts">
+          <div class="container">
+            <div id="top-adverts-sale" class="top-adverts__wrap">
+              <div class="top-adverts__wrap-title">
+                <h2 class="title title--sub top-adverts__title">
+                  Топ оголошень з продажу
+                </h2>
+                <div class="text">
+                  <a
+                    href="#"
+                    class="top-adverts__link top-adverts__link--sale text text--turquoise">
+                    Переглянути всі оголошення</a>
+                </div>
+              </div>
+              <div class="ads ads--long">
+                <div class="ads__wrap ads__wrap--mtBig">
+                  <div class="ads__cardContent active allotment">
+                    <a href="/advert/id=1.html" class="ads__card">
+                      <div class="ads__cardWrap">
+                        <div class="ads__allotment">
+                          <p>top</p>
+                        </div>
+                        <div class="ads__addressInfoWrap">
+                          <div class="ads__addressInfo">
+                            <div class="ads__section ads__section--first">
+                              <div class="text text--gray text--normal">
+                                <p>Регіон</p>
+                              </div>
+                              <div class="text text--black">
+                                <p>Київська область</p>
+                              </div>
+                            </div>
+                            <div class="ads__section">
+                              <div class="text text--gray text--normal">
+                                <p>Район</p>
+                              </div>
+                              <div class="text text--black">
+                                <p>Бородянський район</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="ads__section">
+                          <div class="text text--gray text--normal">
+                            <p>Площа, Га</p>
+                          </div>
+                          <div class="text text--black">
+                            <p>0.15</p>
+                          </div>
+                        </div>
+                        <div class="ads__priceInfo">
+                          <div class="ads__section">
+                            <div class="text text--gray text--normal">
+                              <p>Ціна за 1 Га</p>
+                            </div>
+                            <div class="text text--black">
+                              <p>
+                                <span class="js-price-num">2000000</span> грн.
+                              </p>
+                            </div>
+                          </div>
+                          <div class="ads__section">
+                            <div class="text text--gray text--normal">
+                              <p>Ціна за все</p>
+                            </div>
+                            <div class="text text--black">
+                              <p>
+                                <span class="js-price-num">300000</span> грн.
+                              </p>
+                            </div>
+                          </div>
+                          <div
+                            class="ads__section ads__section--extra flex-cont">
+                            <div class="extra-card">
+                              <img
+                                src="public/frontend/img/svg/Auction.svg"
+                                alt=""/>
+                              <div class="extra-card__inform">
+                                <div class="text text--mini">
+                                  <p>Можливий торг</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="viewers">
+                              <div class="viewers__icon">
+                                <img
+                                  src="public/frontend/img/svg/eye.svg"
+                                  alt=""/>
+                              </div>
+                              <div class="viewers__value">
+                                <div class="text text--gray text--normal">
+                                  <p>2406</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="ads__section ads__section--date">
+                            <div class="text text--gray text--normal">
+                              <p>Дата публікації</p>
+                            </div>
+                            <div class="text text--black">
+                              <p>22.04.2020</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                    <div
+                      class="ads__section ads__section--star js-favorite"
+                      data-advert-id="4931">
+                      <i class="icon-star-outline">
+                        <img
+                          src="public/frontend/img/svg/star-outline.svg"
+                          alt=""/>
+                      </i>
+                      <i class="icon-star">
+                        <img src="public/frontend/img/svg/star.svg" alt="" />
+                      </i>
+                    </div>
+                  </div>
+                  <div class="ads__cardContent active allotment">
+                    <a href="/advert/id=1.html" class="ads__card">
+                      <div class="ads__cardWrap">
+                        <div class="ads__allotment">
+                          <p>top</p>
+                        </div>
+                        <div class="ads__addressInfoWrap">
+                          <div class="ads__addressInfo">
+                            <div class="ads__section ads__section--first">
+                              <div class="text text--gray text--normal">
+                                <p>Регіон</p>
+                              </div>
+                              <div class="text text--black">
+                                <p>Київська область</p>
+                              </div>
+                            </div>
+                            <div class="ads__section">
+                              <div class="text text--gray text--normal">
+                                <p>Район</p>
+                              </div>
+                              <div class="text text--black">
+                                <p>Броварський район</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="ads__section">
+                          <div class="text text--gray text--normal">
+                            <p>Площа, Га</p>
+                          </div>
+                          <div class="text text--black">
+                            <p>2</p>
+                          </div>
+                        </div>
+                        <div class="ads__priceInfo">
+                          <div class="ads__section">
+                            <div class="text text--gray text--normal">
+                              <p>Ціна за 1 Га</p>
+                            </div>
+                            <div class="text text--black">
+                              <p>
+                                <span class="js-price-num">100000</span> грн.
+                              </p>
+                            </div>
+                          </div>
+                          <div class="ads__section">
+                            <div class="text text--gray text--normal">
+                              <p>Ціна за все</p>
+                            </div>
+                            <div class="text text--black">
+                              <p>
+                                <span class="js-price-num">200000</span> грн.
+                              </p>
+                            </div>
+                          </div>
+                          <div
+                            class="ads__section ads__section--extra flex-cont">
+                            <div class="extra-card">
+                              <img
+                                src="public/frontend/img/svg/Auction.svg"
+                                alt=""/>
+                              <div class="extra-card__inform">
+                                <div class="text text--mini">
+                                  <p>Можливий торг</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="viewers">
+                              <div class="viewers__icon">
+                                <img
+                                  src="public/frontend/img/svg/eye.svg"
+                                  alt=""/>
+                              </div>
+                              <div class="viewers__value">
+                                <div class="text text--gray text--normal">
+                                  <p>776</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="ads__section ads__section--date">
+                            <div class="text text--gray text--normal">
+                              <p>Дата публікації</p>
+                            </div>
+                            <div class="text text--black">
+                              <p>20.07.2020</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                    <div
+                      class="ads__section ads__section--star js-favorite"
+                      data-advert-id="4995">
+                      <i class="icon-star-outline">
+                        <img
+                          src="public/frontend/img/svg/star-outline.svg"
+                          alt=""/>
+                      </i>
+                      <i class="icon-star">
+                        <img src="public/frontend/img/svg/star.svg" alt="" />
+                      </i>
+                    </div>
+                  </div>
+                  <div class="ads__cardContent active">
+                    <a href="/advert/id=1.html" class="ads__card">
+                      <div class="ads__cardWrap">
+                        <div class="ads__allotment">
+                          <p>top</p>
+                        </div>
+                        <div class="ads__addressInfoWrap">
+                          <div class="ads__addressInfo">
+                            <div class="ads__section ads__section--first">
+                              <div class="text text--gray text--normal">
+                                <p>Регіон</p>
+                              </div>
+                              <div class="text text--black">
+                                <p>Одеська область</p>
+                              </div>
+                            </div>
+                            <div class="ads__section">
+                              <div class="text text--gray text--normal">
+                                <p>Район</p>
+                              </div>
+                              <div class="text text--black">
+                                <p>Татарбунарський район</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="ads__section">
+                          <div class="text text--gray text--normal">
+                            <p>Площа, Га</p>
+                          </div>
+                          <div class="text text--black">
+                            <p>6.0212</p>
+                          </div>
+                        </div>
+                        <div class="ads__priceInfo">
+                          <div class="ads__section">
+                            <div class="text text--gray text--normal">
+                              <p>Ціна за 1 Га</p>
+                            </div>
+                            <div class="text text--black">
+                              <p>
+                                <span class="js-price-num">41519</span> грн.
+                              </p>
+                            </div>
+                          </div>
+                          <div class="ads__section">
+                            <div class="text text--gray text--normal">
+                              <p>Ціна за все</p>
+                            </div>
+                            <div class="text text--black">
+                              <p>
+                                <span class="js-price-num">250000</span> грн.
+                              </p>
+                            </div>
+                          </div>
+                          <div
+                            class="ads__section ads__section--extra flex-cont">
+                            <div class="extra-card">
+                              <img
+                                src="public/frontend/img/svg/Auction.svg"
+                                alt=""/>
+                              <div class="extra-card__inform">
+                                <div class="text text--mini">
+                                  <p>Можливий торг</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="viewers">
+                              <div class="viewers__icon">
+                                <img
+                                  src="public/frontend/img/svg/eye.svg"
+                                  alt=""/>
+                              </div>
+                              <div class="viewers__value">
+                                <div class="text text--gray text--normal">
+                                  <p>154</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="ads__section ads__section--date">
+                            <div class="text text--gray text--normal">
+                              <p>Дата публікації</p>
+                            </div>
+                            <div class="text text--black">
+                              <p>21.08.2020</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                    <div
+                      class="ads__section ads__section--star js-favorite"
+                      data-advert-id="5099">
+                      <i class="icon-star-outline">
+                        <img
+                          src="public/frontend/img/svg/star-outline.svg"
+                          alt=""/>
+                      </i>
+                      <i class="icon-star">
+                        <img src="public/frontend/img/svg/star.svg" alt="" />
+                      </i>
+                    </div>
+                  </div>
+                  <div class="ads__cardContent active">
+                    <a href="/advert/id=1.html" class="ads__card">
+                      <div class="ads__cardWrap">
+                        <div class="ads__allotment">
+                          <p>top</p>
+                        </div>
+                        <div class="ads__addressInfoWrap">
+                          <div class="ads__addressInfo">
+                            <div class="ads__section ads__section--first">
+                              <div class="text text--gray text--normal">
+                                <p>Регіон</p>
+                              </div>
+                              <div class="text text--black">
+                                <p>Київська область</p>
+                              </div>
+                            </div>
+                            <div class="ads__section">
+                              <div class="text text--gray text--normal">
+                                <p>Район</p>
+                              </div>
+                              <div class="text text--black">
+                                <p>Києво-Святошинський район</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="ads__section">
+                          <div class="text text--gray text--normal">
+                            <p>Площа, Га</p>
+                          </div>
+                          <div class="text text--black">
+                            <p>0.15</p>
+                          </div>
+                        </div>
+                        <div class="ads__priceInfo">
+                          <div class="ads__section">
+                            <div class="text text--gray text--normal">
+                              <p>Ціна за 1 Га</p>
+                            </div>
+                            <div class="text text--black">
+                              <p>
+                                <span class="js-price-num">2700000</span> грн.
+                              </p>
+                            </div>
+                          </div>
+                          <div class="ads__section">
+                            <div class="text text--gray text--normal">
+                              <p>Ціна за все</p>
+                            </div>
+                            <div class="text text--black">
+                              <p>
+                                <span class="js-price-num">405000</span> грн.
+                              </p>
+                            </div>
+                          </div>
+                          <div
+                            class="ads__section ads__section--extra flex-cont">
+                            <div class="extra-card">
+                              <img
+                                src="public/frontend/img/svg/Auction.svg"
+                                alt=""/>
+                              <div class="extra-card__inform">
+                                <div class="text text--mini">
+                                  <p>Можливий торг</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="viewers">
+                              <div class="viewers__icon">
+                                <img
+                                  src="public/frontend/img/svg/eye.svg"
+                                  alt=""/>
+                              </div>
+                              <div class="viewers__value">
+                                <div class="text text--gray text--normal">
+                                  <p>93</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="ads__section ads__section--date">
+                            <div class="text text--gray text--normal">
+                              <p>Дата публікації</p>
+                            </div>
+                            <div class="text text--black">
+                              <p>24.08.2020</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                    <div
+                      class="ads__section ads__section--star js-favorite"
+                      data-advert-id="5105">
+                      <i class="icon-star-outline">
+                        <img
+                          src="public/frontend/img/svg/star-outline.svg"
+                          alt=""/>
+                      </i>
+                      <i class="icon-star">
+                        <img src="public/frontend/img/svg/star.svg" alt="" />
+                      </i>
+                    </div>
+                  </div>
+                  <div class="ads__cardContent active allotment">
+                    <a href="/advert/id=1.html" class="ads__card">
+                      <div class="ads__cardWrap">
+                        <div class="ads__allotment">
+                          <p>top</p>
+                        </div>
+                        <div class="ads__addressInfoWrap">
+                          <div class="ads__addressInfo">
+                            <div class="ads__section ads__section--first">
+                              <div class="text text--gray text--normal">
+                                <p>Регіон</p>
+                              </div>
+                              <div class="text text--black">
+                                <p>Київська область</p>
+                              </div>
+                            </div>
+                            <div class="ads__section">
+                              <div class="text text--gray text--normal">
+                                <p>Район</p>
+                              </div>
+                              <div class="text text--black">
+                                <p>Баришівський район</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="ads__section">
+                          <div class="text text--gray text--normal">
+                            <p>Площа, Га</p>
+                          </div>
+                          <div class="text text--black">
+                            <p>1.9995</p>
+                          </div>
+                        </div>
+                        <div class="ads__priceInfo">
+                          <div class="ads__section">
+                            <div class="text text--gray text--normal">
+                              <p>Ціна за 1 Га</p>
+                            </div>
+                            <div class="text text--black">
+                              <p>
+                                <span class="js-price-num">140035</span> грн.
+                              </p>
+                            </div>
+                          </div>
+                          <div class="ads__section">
+                            <div class="text text--gray text--normal">
+                              <p>Ціна за все</p>
+                            </div>
+                            <div class="text text--black">
+                              <p>
+                                <span class="js-price-num">280000</span> грн.
+                              </p>
+                            </div>
+                          </div>
+                          <div
+                            class="ads__section ads__section--extra flex-cont">
+                            <div class="extra-card">
+                              <img
+                                src="public/frontend/img/svg/Auction.svg"
+                                alt=""/>
+                              <div class="extra-card__inform">
+                                <div class="text text--mini">
+                                  <p>Можливий торг</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="viewers">
+                              <div class="viewers__icon">
+                                <img
+                                  src="public/frontend/img/svg/eye.svg"
+                                  alt=""/>
+                              </div>
+                              <div class="viewers__value">
+                                <div class="text text--gray text--normal">
+                                  <p>84</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="ads__section ads__section--date">
+                            <div class="text text--gray text--normal">
+                              <p>Дата публікації</p>
+                            </div>
+                            <div class="text text--black">
+                              <p>24.08.2020</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                    <div
+                      class="ads__section ads__section--star js-favorite"
+                      data-advert-id="5111">
+                      <i class="icon-star-outline">
+                        <img
+                          src="public/frontend/img/svg/star-outline.svg"
+                          alt=""/>
+                      </i>
+                      <i class="icon-star">
+                        <img src="public/frontend/img/svg/star.svg" alt="" />
+                      </i>
+                    </div>
+                  </div>
+                </div>
+                <a href="#" class="btn btn--show-adverts">
+                  Переглянути всі оголошення</a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="news-section dark-section">
+          <div class="container">
+            <div class="title title--sub flex-cont justify-sb align-center">
+              <p>Новини</p>
+              <div class="slider-control slider-control--hover">
+                <img
+                  class="prev revert"
+                  src="public/frontend/img/svg/arrow-black.svg"
+                  alt=""/>
+                <img
+                  class="next"
+                  src="public/frontend/img/svg/arrow-black.svg"
+                  alt=""/>
+              </div>
+            </div>
+            <div class="news-section__swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="news-section__date">
+                    <p>02-03-2020</p>
+                  </div>
+                  <a
+                    href="/do-uland-doluchilisya-mayzhe-pivsotni-regionalnikh-agentiv"
+                    class="news-section__title">
+                    До Uland долучилися майже півсотні регіональних агентів</a>
+                  <div class="news-section__content">
+                    <p>
+                      До інформаційної платформи Uland, яка сконцентрувала
+                      найбільшу в Україні базу оголошень про обіг земель, уже
+                      долучилися 48 регіональних агентів.
+                    </p>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="news-section__date">
+                    <p>20-01-2020</p>
+                  </div>
+                  <a
+                    href="/zemlya-onlayn-bez-spekulyatsiy"
+                    class="news-section__title">
+                    Земля. Онлайн. Без спекуляцій</a>
+                  <div class="news-section__content">
+                    <p>
+                      Доки політики й високопосадовці шукають оптимальну модель
+                      відкриття земельного ринку, команда Uland успішно формує
+                      дієві інструменти цивілізованої взаємодії між його
+                      учасниками.
+                    </p>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="news-section__date">
+                    <p>26-09-2019</p>
+                  </div>
+                  <a href="/blog-zasnovnika" class="news-section__title">
+                    Блог засновника</a>
+                  <div class="news-section__content">
+                    <p>
+                      Засновник першого спеціалізованого інтернет-сервісу для
+                      обігу земельних ділянок Uland.сom.ua
+                    </p>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="news-section__date">
+                    <p>15-08-2019</p>
+                  </div>
+                  <a href="/smi-pro-nash-servis" class="news-section__title">
+                    СМІ про наш сервіс</a>
+                  <div class="news-section__content">
+                    <p>
+                      В Україні створено перший спеціалізований інтернет-сервіс
+                      для обігу земельних ділянок — Uland
+                    </p>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="news-section__date">
+                    <p>19-02-2019</p>
+                  </div>
+                  <a
+                    href="/vidkrittya-proektu-uland"
+                    class="news-section__title">
+                    Відкриття проекту Uland.</a>
+                  <div class="news-section__content">
+                    <p>
+                      Все протестовано, та працює правильно. Ми розповімо шо
+                      саме робить нашу систему унікальною та зручною.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__card footer__card--custom">
+          <a href="/" class="logo">
+            <img src="public/frontend/img/svg/logo-w.svg" alt="" />
+          </a>
+          <div class="footer__copyright">
+            <p>Copyright 2020. Всі права захищені.</p>
+          </div>
+          <div class="footer__pay">
+            <img src="public/frontend/img/Mastercard-logo.png" alt="" />
+            <img src="public/frontend/img/Visa.png" alt="" />
+          </div>
+        </div>
+        <ul class="footer__nav">
+          <li><a href="support.html">Допомога і Зворотній зв'язок</a></li>
+          <li><a href="platni-poslugi.html">Платні послуги</a></li>
+          <li>
+            <a href="yak-pratsyuvati-z-sistemoyu.html">
+              Як працювати з системою?</a>
+          </li>
+        </ul>
+        <ul class="footer__nav">
+          <li><a href="search.html">Оголошення</a></li>
+          <li><a href="articles.html">Новини</a></li>
+        </ul>
+        <ul class="footer__nav">
+          <li><a href="umovi-vikoristannya.html">Умови використання</a></li>
+          <li>
+            <a href="politika-konfidentsiynosti.html">
+              Політика конфіденційності</a>
+          </li>
+        </ul>
+        <div class="footer__card footer__card--right">
+          <div class="footer__social">
+            <p>Ми в соціальних мережах:</p>
+            <ul class="social-nav">
+              <li>
+                <a href="https://www.facebook.com/ULAND-101028784636794/">
+                  <img src="public/frontend/img/svg/fb.svg" alt="" />
+                </a>
+              </li>
+            </ul>
+          </div>
+          <a href="mailto:info@uland.com.ua" class="footer__mail">
+            <img src="public/frontend/img/svg/mail-g.svg" alt="" />
+            <p>info@uland.com.ua</p>
+          </a>
+          <div class="footer__development">
+            <p>
+              Розробка і підтримка від
+              <a
+                href="https://www.linkedin.com/in/vitaliy-nosov-5543a8173/"
+                target="_blank">
+                Vitaliy Nosov</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Popup -->
+
+    <div class="popup favorites-login">
+      <div class="popup__wrap">
+        <div class="popup__close js-close-popup">
+          <img src="public/frontend/img/svg/close.svg" alt="" />
+        </div>
+        <div class="title title--center title--mini">
+          <p>Подади оголошення</p>
+        </div>
+        <div class="text text--mtMedium text--center">
+          <p>
+            Щоб подати оголошення, потрібно авторизуватись або зареєструватись
+          </p>
+        </div>
+        <div class="helper helper--mt helper--center">
+          <a href="customer/login.html" class="btn btn--same">авторизуватись</a>
+          <a href="register-step-1.html" class="btn btn--same btn--ml-20">
+            зареєструватись</a>
+        </div>
+      </div>
+    </div>
+    <div class="popup favorites-login-second">
+      <div class="popup__wrap">
+        <div class="popup__close js-close-popup">
+          <img src="public/frontend/img/svg/close.svg" alt="" />
+        </div>
+        <div class="title title--center title--mini">
+          <p>Ви не авторизовані</p>
+        </div>
+        <div class="text text--mtMedium text--center">
+          <p>
+            Щоб додати оголошення в обрані потрібно авторизуватись або
+            зареєструватись
+          </p>
+        </div>
+        <div class="helper helper--mt helper--center">
+          <a href="customer/login.html" class="btn btn--same">авторизуватись</a>
+          <a href="register-step-1.html" class="btn btn--same btn--ml-20">
+            зареєструватись</a>
+        </div>
+      </div>
+    </div>
+    <div class="popup close-advert">
+      <div class="popup__wrap">
+        <div class="popup__close js-close-popup">
+          <img src="public/frontend/img/svg/close.svg" alt="" />
+        </div>
+        <div class="title title--center title--mini">
+          <p>Відключення оголошення</p>
+        </div>
+        <div class="text text--mtMedium text--center close-advert__sum">
+          <span id="text-description">
+            Вкажіть вартість, по якій Ви здали в оренду землю:</span>
+          <input type="text" pattern="^[ 0-9]+$" id="soldPrice" />
+          <span>грн.</span>
+        </div>
+        <div class="helper helper--mt helper--center">
+          <a href="#" class="btn btn--custom btn--same" id="close-advert-btn">
+            Не сдана</a>
+          <a href="#" class="btn btn--same btn--ml-20" id="close-advert-btn-ok">
+            Земля сдана</a>
+        </div>
+      </div>
+    </div>
+    <div class="popup close-advert-end">
+      <div class="popup__wrap popup__wrap--min">
+        <div class="title title--center title--mini">
+          <p>Оголошення успішно відключено і відкріплено від Вашого профілю!</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="loader">
+      <div class="loader__item"></div>
+    </div>
+
+    <a href="customer/login.html" class="advert-action btn">
+      <p>Подати оголошення</p>
+      <img src="public/frontend/img/svg/plus-black.svg" alt="" />
+    </a>
+    <script src="public/frontend/js/app.js"></script>
+    <script
+      type="text/javascript"
+      src="public/frontend/js/library.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+    <script
+      type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBT9V7PtXQCVT5wFlkamJueRXOLgYSnNQk&language=uk"></script>
+    <script
+      type="text/javascript"
+      src="public/frontend/js/main.min.js"></script>
+      
+  </body>
+</html>
